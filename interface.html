@@ -1,0 +1,119 @@
+<style>
+    :root {
+    --couleur-fond-rgb: 43, 43, 43;
+    --couleur-police: #ffffff;
+    --couleur-bordure: rgb(200, 200, 200);
+    --couleur-icone: rgb(200, 200, 200);
+    --couleur-lettre-speciale: rgb(75, 75, 75);
+    --couleur-lettre-survole: rgba(75, 75, 75, 0.65);
+    --couleur-lettre-speciale-survole: rgba(75, 75, 75, 0.65);
+    --couleur-bien-place: rgb(231, 0, 42);
+    --couleur-mal-place: rgb(255, 189, 0);
+    --couleur-lettre-survole-bien-place: rgba(231, 0, 42, 0.65);
+    --couleur-lettre-survole-mal-place: rgba(255, 189, 0, 0.65);
+    --taille-cellule: 48px;
+    --epaisseur-bordure-cellule: 1px;
+    --epaisseur-padding-cellule: 2px;
+    --couleur-bar-max: rgb(231, 0, 42);
+    --couleur-bien-place: rgb(231, 0, 42);
+    --couleur-mal-place: rgb(255, 189, 0);
+    --couleur-fond-grille: rgb(0, 119, 199);
+    --couleur-non-trouve: rgb(112, 112, 112);
+    --couleur-icone: rgb(200, 200, 200);
+    --couleur-fond-rgb: 43, 43, 43;
+    --couleur-fond: rgb(var(--couleur-fond-rgb));
+    --couleur-bordure: rgb(200, 200, 200);
+    --couleur-bordure-grille: #ffffff;
+    --couleur-police: #ffffff;
+    --couleur-police-grille: rgb(255, 255, 255);
+    --couleur-police-grille-pas-curseur: rgb(255, 255, 255, 0.65);
+    --couleur-lettre-speciale: rgb(75, 75, 75);
+    --couleur-lettre-survole: rgba(75, 75, 75, 0.65);
+    --couleur-lettre-speciale-survole: rgba(75, 75, 75, 0.65);
+    --couleur-lettre-survole-bien-place: rgba(231, 0, 42, 0.65);
+    --couleur-lettre-survole-mal-place: rgba(255, 189, 0, 0.65);
+    --taille-icone: 24px;
+    --taille-icone-zone: 48px;
+    }
+
+
+    body{
+        color: var(--couleur-police);
+    }
+</style>
+
+<body style="background-color: var(--couleur-fond);">
+    <style>
+        .SutBot{
+            display: flex; 
+            flex-direction: column; 
+            position: absolute; 
+            top:50%; right: 0; 
+            transform: translateY(-50%); 
+            border: 2px solid var(--couleur-bordure);
+            border-right: none; 
+            border-radius: 15px 0 0 15px; 
+            padding: 20px 40px;
+        }
+
+        .SutBot-btn{
+            margin: 0 0 20px 0; 
+            font-size: 17px; 
+            font-weight: bold; 
+            padding: 5px 10px;
+            background-color: var(--couleur-lettre-speciale);
+            border-color: var(--couleur-lettre-speciale);
+            border-radius: 5px;
+            color: var(--couleur-police);
+            width: 100%;
+        }
+
+        .SutBot-btn:hover{
+            background-color: var(--couleur-lettre-speciale-survole);
+            border-color: var(--couleur-lettre-speciale-survole);
+            cursor: pointer;
+        }
+
+        .SutBot-title{
+            text-align: center; 
+            font-size: 36px; 
+            margin: 0 0 20px 0;
+        }
+
+        .SutBot-text{
+            text-align: center; 
+            margin: 0; 
+            font-size: 20px;
+        }
+
+        .SutBot-link{
+            text-align: center; 
+            margin: 0; 
+            font-size: 15px; 
+            color: var(--couleur-police);
+        }
+        .SutBot-link:hover{
+            color: var(--couleur-lettre-survole-mal-place);
+        }
+
+        .SutBot-container{
+            display: flex; 
+            flex-direction: column; 
+            align-items: center;
+        }
+    </style>
+    <div class="SutBot">
+        <h2 class="SutBot-title">SutBot</h2>
+        <div id="SutBot-container-btn" class="SutBot-container" style="display: flex;">
+            <button id="SutBot-run"  class="SutBot-btn">Complete grid</button>
+            <button id="SutBot-reset" class="SutBot-btn">Reset Data</button>
+        </div>
+        <div id="SutBot-container-information" class="SutBot-container" style="display: none;">
+            <span class="SutBot-text"><span id="SutBot-right">0</span> Right Char</span>
+            <span class="SutBot-text"><span id="SutBot-possible">0</span> Possible</span>
+            <br>
+        </div>
+        <span class="SutBot-text">Created By</span>
+        <a href="https://github.com/JulienGuitter" class="SutBot-link">Julien Guitter</a>
+    </div>
+</body>
